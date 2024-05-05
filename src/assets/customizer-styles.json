@@ -1,0 +1,22 @@
+[
+  {
+  "category": "header",
+  "items": [
+    {
+      "name": "background",
+      "value": "#3b5f82",
+      "type": "color"
+    }
+  ]
+},
+{
+
+  "category": "buttons",
+  "items": [
+    {
+      "name": "border",
+      "value": "#5f6dce",
+      "type": "color"
+    }
+  ]
+}]

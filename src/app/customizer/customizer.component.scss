@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  .layout-left {
+    flex: 25;
+    border-right: 1px solid grey;
+  }
+
+  .layout-right {
+    flex: 75;
+  }
+}
