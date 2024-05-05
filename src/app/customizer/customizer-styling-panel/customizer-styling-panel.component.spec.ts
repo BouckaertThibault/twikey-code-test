@@ -8,10 +8,9 @@ describe('CustomizerStylingPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CustomizerStylingPanelComponent]
-    })
-    .compileComponents();
-    
+      imports: [CustomizerStylingPanelComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CustomizerStylingPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

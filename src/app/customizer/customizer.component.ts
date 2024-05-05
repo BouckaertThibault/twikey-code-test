@@ -8,16 +8,22 @@ import { CustomizerPreviewComponent } from './customizer-preview/customizer-prev
 @Component({
   selector: 'app-customizer',
   standalone: true,
-  imports: [CommonModule, CustomizerStylingPanelComponent, CustomizerPreviewComponent],
+  imports: [
+    CommonModule,
+    CustomizerStylingPanelComponent,
+    CustomizerPreviewComponent,
+  ],
   templateUrl: './customizer.component.html',
-  styleUrl: './customizer.component.scss'
+  styleUrl: './customizer.component.scss',
 })
 export class CustomizerComponent implements OnInit {
-  categories: CustomizerCategories[] = []
+  categories: CustomizerCategories[] = [];
 
   constructor(public customizerService: CustomizerService) {}
 
   ngOnInit(): void {
-    this.customizerService.getStyleCategories().subscribe(categories => this.categories = categories)
+    this.customizerService
+      .getStyleCategories()
+      .subscribe(categories => (this.categories = categories));
   }
 }

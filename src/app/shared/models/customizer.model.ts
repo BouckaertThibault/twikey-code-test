@@ -1,10 +1,10 @@
 export interface CustomizerStyles {
-  type: "color";
+  type: 'color';
   value: string;
-  name: string
+  name: string;
 }
 
 export interface CustomizerCategories {
-  category: "header" | "buttons",
-  items: CustomizerStyles[]
+  category: 'header' | 'buttons';
+  items: CustomizerStyles[];
 }

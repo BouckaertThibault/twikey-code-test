@@ -1,35 +1,36 @@
 <mat-accordion>
-@for (category of categories; track category.category) {
+  @for (category of categories; track category.category) {
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
           @switch (category.category) {
-            @case ("header") {
+            @case ('header') {
               <mat-icon>space_dashboard</mat-icon>
             }
-            @case ("buttons") {
+            @case ('buttons') {
               <mat-icon>category</mat-icon>
             }
           }
         </mat-panel-title>
         <mat-panel-description>
-          {{category.category | titlecase}}
+          {{ category.category | titlecase }}
         </mat-panel-description>
       </mat-expansion-panel-header>
       @for (item of category.items; track item.name) {
         <div class="style-item" [formGroup]="styleFormControl">
-
-            @switch (item.type) {
-              @case ("color") {
-                <div [formGroupName]="category.category" class="item-form">
-                  <ngx-colors ngx-colors-trigger format="hex" [formControlName]="item.name"></ngx-colors>
-                  {{item.name | titlecase}}
-                </div>
-              }
+          @switch (item.type) {
+            @case ('color') {
+              <div [formGroupName]="category.category" class="item-form">
+                <ngx-colors
+                  ngx-colors-trigger
+                  format="hex"
+                  [formControlName]="item.name"></ngx-colors>
+                {{ item.name | titlecase }}
+              </div>
             }
+          }
         </div>
       }
-
     </mat-expansion-panel>
-}
+  }
 </mat-accordion>

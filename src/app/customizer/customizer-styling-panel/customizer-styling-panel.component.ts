@@ -46,7 +46,10 @@ export class CustomizerStylingPanelComponent implements OnChanges {
   @Input() categories: CustomizerCategories[] = [];
   styleFormControl = new FormGroup({});
 
-  constructor(private customizerService: CustomizerService, private destroyRef: DestroyRef) {}
+  constructor(
+    private customizerService: CustomizerService,
+    private destroyRef: DestroyRef
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['categories'] && changes['categories'].currentValue) {
@@ -69,21 +72,26 @@ export class CustomizerStylingPanelComponent implements OnChanges {
     categories.forEach(category => {
       const categoryGroup = new FormGroup({});
       category.items.forEach(item => {
-        categoryGroup.addControl(item.name, new FormControl(item.value, Validators.required));
+        categoryGroup.addControl(
+          item.name,
+          new FormControl(item.value, Validators.required)
+        );
       });
       this.styleFormControl.addControl(category.category, categoryGroup);
     });
   }
 
-  private styleFormToCustomizerCategories(categories: CustomizerCategories[]): void {
+  private styleFormToCustomizerCategories(
+    categories: CustomizerCategories[]
+  ): void {
     let updatedCategories = [...categories];
 
-    updatedCategories.forEach((category) => {
+    updatedCategories.forEach(category => {
       const categoryForm = this.styleFormControl.get(
         category.category
       ) as unknown as FormGroup;
       if (categoryForm) {
-        category.items.forEach((item) => {
+        category.items.forEach(item => {
           const itemControl = categoryForm.get(item.name);
           if (itemControl) {
             item.value = itemControl.value;

@@ -8,10 +8,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './customizer-preview.component.html',
-  styleUrl: './customizer-preview.component.scss'
+  styleUrl: './customizer-preview.component.scss',
 })
 export class CustomizerPreviewComponent {
-
   constructor(public customizerService: CustomizerService) {}
-
 }
